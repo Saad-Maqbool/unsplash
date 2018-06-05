@@ -1,10 +1,16 @@
-<div class="container">
-  <div class="row" *ngFor="let post of posts">
-    <div class="card card-block">
-      <h4 class="card-title">{{ post.title }}</h4>
-      <p class="card-text">{{post.body}}</p>
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
-    </div>
-  </div>
+
+<div style="text-align:center; width: 60%;">
+
+
+</div>
+
+<div class="input-group form-container">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+  <input  type="text" class="form-control input-style" placeholder="Search free high-resolution photos" [(ngModel)]=photoname>
+</div>
+
+<button type="button" class="btn btn-primary btn-lg button-style" (click)=getAllPictures()>Search</button>
+
+<div *ngFor="let pic of imagePath.results" class="photos-container" >
+  <img src={{pic.urls.small}} class="photos-style" />
 </div>

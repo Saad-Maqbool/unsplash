@@ -7,15 +7,18 @@ import {PostsService} from '../services/posts.service';
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
+  photoname = '';
+    imagePath;
 
   constructor(private controllerService: PostsService) { }
 
   ngOnInit() {
   }
-  getbalance() {
-    this.controllerService.getAllPosts().subscribe(
+  getAllPictures() {
+    this.controllerService.getAllPictures(this.photoname).subscribe(
       res => {
         console.log(res);
+        this.imagePath = res;
       }
     );
   }
